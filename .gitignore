@@ -1,0 +1,40 @@
+# Maven
+/target/
+!/.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+logs/
+*.log
+
+# IntelliJ
+/.idea/
+*.iml
+out/
+
+# Eclipse
+.classpath
+.project
+/.settings/
+*.launch
+
+# VS Code
+/.vscode/
+
+# Java
+*.class
+hs_err_pid*
+*.swp
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Databases
+*.db
+*.h2.db
+*.derby
+
+# Maven wrapper (keep jar)
+/.mvn/wrapper/maven-wrapper.jar
