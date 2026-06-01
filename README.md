@@ -11,13 +11,19 @@ Base Maven project scaffold for OpenXava.
 
 ## Run
 
-Build the project with:
+Run the project with:
+
+```bash
+mvn spring-boot:run
+```
+
+If you only want the deployable WAR, build it with:
 
 ```bash
 mvn clean package
 ```
 
-Deploy the generated WAR to a Tomcat 9 runtime or another servlet container that supports the `javax.servlet` API.
+Spring Boot 2.7.18 provides the embedded servlet container used for local execution, while OpenXava remains at version 7.7.2.
 
 ## Notes
 

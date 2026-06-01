@@ -6,7 +6,12 @@
 
     <persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>com.paullarrea.openxavafinalproject.model.Customer</class>
+        <class>com.grupo8.openxava.model.Customer</class>
+        <class>com.grupo8.openxava.model.Departamento</class>
+        <class>com.grupo8.openxava.model.Horario</class>
+        <class>com.grupo8.openxava.model.Empleado</class>
+        <class>com.grupo8.openxava.model.RegistroAsistencia</class>
+        <class>com.grupo8.openxava.model.Usuario</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:openxavafinalproject" />
