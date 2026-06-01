@@ -42,7 +42,7 @@ public class OpenXavaFinalProjectApplication extends SpringBootServletInitialize
         FilterRegistrationBean<NaviOXFilter> registration = new FilterRegistrationBean<>();
         registration.setFilter(new NaviOXFilter());
         registration.setName("naviox");
-        registration.addUrlPatterns("*.jsp", "/modules/*", "/phone/index.jsp", "/m/*");
+        registration.addUrlPatterns("*.jsp", "/modules/*", "/phone/index.jsp");
         registration.setDispatcherTypes(EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD));
         return registration;
     }
