@@ -1,21 +1,23 @@
 trigger:
-  - main
+- main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: 'Default'
 
 steps:
-  - task: JavaToolInstaller@0
-    inputs:
-      versionSpec: '17'
-      jdkArchitectureOption: 'x64'
-      jdkSourceOption: 'PreInstalled'
-    displayName: 'Configurar Java 17'
+- powershell: |
+    java -version
+    mvn -version
+  displayName: 'Verificar Java y Maven'
 
-  - task: Maven@4
-    inputs:
-      mavenPomFile: 'pom.xml'
-      goals: 'test'
-      publishJUnitResults: true
-      testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    displayName: 'Ejecutar pruebas automatizadas con Maven'
+- powershell: |
+    mvn test
+  displayName: 'Ejecutar pruebas automatizadas con Maven'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    testRunTitle: 'Pruebas automatizadas de asistencia'
+  displayName: 'Publicar resultados JUnit'
